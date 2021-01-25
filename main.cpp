@@ -68,26 +68,107 @@ unsigned int FM_dec[ninstr]  = {   64,  128,  128,  128,   32,  128,  128,  128,
 #define nokey 255
 #define instrkey 254
 
-// Melody
+// Melody - debug
+// unsigned int melody[] = {
+//   C4, C4, C4,
+//   C4s, C4s, C4s,
+//   D4, D4, D4,
+//   D4s, D4s, D4s,
+//   E4, E4, E4,
+//   F4, F4, F4,
+//   F4s, F4s, F4s,
+//   G4, G4, G4,
+//   G4s, G4s, G4s,
+//   A4, A4, A4,
+//   A4s, A4s, A4s,
+//   B4, B4, B4,
+
+//   C5, C5, C5,
+//   C5s, C5s, C5s,
+//   D5, D5, D5,
+//   D5s, D5s, D5s,
+//   E5, E5, E5,
+//   F5, F5, F5,
+//   F5s, F5s, F5s,
+//   G5, G5, G5,
+//   G5s, G5s, G5s,
+//   A5, A5, A5,
+//   A5s, A5s, A5s,
+//   B5, B5, B5,
+
+//   C6, C6, C6,
+//   C6s, C6s, C6s,
+//   D6, D6, D6,
+//   D6s, D6s, D6s,
+//   E6, E6, E6,
+//   F6, F6, F6
+// };
+
+// Melody - Fur Elise
+// unsigned int melody[] = {
+//   E5, D5s, E5, D5s, E5, B4, D5, C5, A4,
+//   C4, E4, A4, B4, 
+//   E4, G4s, B4, C5, 
+//   E4,
+//   E5, D5s, E5, D5s, E5, B4, D5, C5, A4,
+//   C4, E4, A4, B4, 
+//   E4, C5, B4, A4,
+//   A4, B4, C5, D5, E5, 
+//   G4, 
+//   F5, E5, D5, 
+//   F4, 
+//   E5, D5, C5,
+//   E4, 
+//   D5, C5, B4,
+//   E4, E5,
+//   E5, E6,
+//   D5s, E5, D5s
+//   };
+
+
+// Melody - MEGALOVANIA
 unsigned int melody[] = {
-  E5, D5s, E5, D5s, E5, B4, D5, C5, A4,
-  C4, E4, A4, B4, 
-  E4, G4s, B4, C5, 
-  E4,
-  E5, D5s, E5, D5s, E5, B4, D5, C5, A4,
-  C4, E4, A4, B4, 
-  E4, C5, B4, A4,
-  A4, B4, C5, D5, E5, 
-  G4, 
-  F5, E5, D5, 
-  F4, 
-  E5, D5, C5,
-  E4, 
-  D5, C5, B4,
-  E4, E5,
-  E5, E6,
-  D5s, E5, D5s
-  };
+  D5, D5, D6, A5, G5s, G5, F5, D5, F5, G5, C5, C5, D6, A5, G5s, G5,
+  F5, D5, F5, G5, B4, B4, D6, A5, G5s, G5, F5, D5, F5, G5, A4s, A4s, D5,
+  A5, G5s, G5, F5, D5, F5, G5, D5, D5, D6, A5, G5s, G5, F5, D5,
+  F5, G5, C5, C5, D6, A5, G5s, G5, F5, D5, F5, G5, B4, B4, D6, A5, G5s,
+  G5, F5, D5, F5, G5, A4s, A4s, D6, A5, G5s, G5, F5, D5, F5, G5, D5, D5,
+  D6, A5, G5s, G5, F5, D5, F5, G5, C5, C5, D6, A5, G5s, G5, F5,
+  D5, F5, G5, B4, B4, D6, A5, G5s, G5, F5, D5, F5, G5, A4s, A4s, D6, A5,
+  G5s, G5, F5, D5, F5, G5, D5, D5, D6, A5, G5s, G5, F5, D5, F5, G5,
+  C5, C5, D6, A5, G5s, G5, F5, D5, F5, G5, B4, B4, D6, A5, G5s, G5,
+  F5, D5, G5, A4s, A4s, D6, A5, G5s, G5, F5, D5, F5, G5, F5, F5, F5,
+  F5, F5, D5, D5, D5, F5, F5, F5, F5, G5, G5s, G5, F5, D5, F5, G5,
+  F5, F5, F5, G5, G5s, A5, C6, A5, D6, D6, D6, A5, C6,
+  A5, A5, A5, A5, A5, G5, G5, A5,
+  A5, A5, A5, G5, A5, D6, A5, G5, D6, A5, G5, F5, C6, A5,
+  G5, F5, D5, E5, F5, A5, C6,
+  F5, D5, F5, G5, G5s, G5, F5, D5, G5s, G5, F5, D5, F5, G5, G5s,
+  A5, C6, A5, G5s, G5, F5, D5, E5, F5, G5, G5s, C6, C6s, G5s, G5s, G5, F5, G5,
+  F5, G5, A5, F6, E6, D6, E6,
+  F5, G5, E5, A5, A5, G5s, G5, F5s,
+  F5, E5, D5s, D5, C5s, D5s,
+  F5, D5, F5, G5, G5s, G5, F5, D5, G5s, G5, F5, D5, E5, G5, G5s,
+  A5, C6, A5, G5s, G5, F5, D5, E5, F5, G5, A5, C6, C6s, G5s, G5s, F5, G5,
+  F4, G4, A4, F5, E5, D5, E5,
+  F5, G5, E5, A5, A5, G5s, G5, F5s, F5, E5,
+  D5s, D5, C5s, D5, B4,
+  F5, E5, D5,
+  F5,
+  B4, F5, E5,
+  D5, D5,
+  B4,
+  F5, E5, D5,
+  F5,
+  B4, F5, E5,
+  D5, D5,
+  D5, D5, D6, A5, G5s, G5, F5, D5, F5, G5, D5, D5, D6, A5, G5s,
+  G5, F5, G5, F5, G5, C5s, C5s, D6, A5, G5s, G5, F5, D5, F5, G5, C5, C5,
+  D6, A5, G5s, G5, F5, D5, F5, G5, D5, D5, D6, A5, G5s, G5, F5,
+  D5, F5, G5, D5, D5, D6, A5, G5s, G5, F5, D5, F5, G5, C5s, C5s, D6, A5,
+  G5s, G5, F5, D5, F5, G5, C5, C5, D6, A5, G5s, G5, F5, D5, F5, G5
+};
+
 int currentNote = -1;
 
 //define the pin to key mapping for 18-key keyboard 
@@ -333,9 +414,9 @@ void loop() {
 
   // Hack the code to play the melody I want
   if (keypressed != nokey) {
-    if (currentNote != -1) {
-      keyreleased = melody[currentNote];
-    }
+    // if (currentNote != -1) {
+    //   keyreleased = melody[currentNote];
+    // }
     currentNote = (currentNote + 1) % (sizeof(melody)/sizeof(melody[0]));
     keypressed = melody[currentNote];
   }
